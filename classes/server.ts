@@ -44,15 +44,20 @@ export default class Servidor{
         console.log('Escuchando Sockets');
 
         this.io.on('connection',cliente=>{
-            console.log('Cliente conectado');
+            //Cuando se conecta alguien en automatico socket genera un id
+            //console.log(cliente.id);
+
+            //Conectar cliente
+            socket.conectarCliente(cliente);
 
             //Mensajes
             socket.mensaje(cliente,this.io);
 
-
-
             //Desconectar
             socket.desconectar(cliente);
+
+             //login
+             socket.login(cliente);
         });
 
     }
