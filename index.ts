@@ -1,11 +1,11 @@
-import Server from "./classes/server";
+import Servervidor from "./classes/server";
 import { SERVER_PORT } from "./global/enviroment";
 import  router  from "./routes/router";
 import bodyParser from "body-parser";
 import cors from 'cors';
 
 
-const server = new Server();
+const server =  Servervidor.instance;
 
 //bodyParser
 server.app.use(bodyParser.urlencoded({extended:true}));    
