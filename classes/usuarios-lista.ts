@@ -42,7 +42,7 @@ export class UsuariosLista{
      * @returns 
      */
     public getLista():Usuario[]{
-        return this.lista;
+        return this.lista.filter(usuario=>usuario.nombre!=='sin-nombre');
     }
 
     /**

@@ -48,16 +48,22 @@ export default class Servidor{
             //console.log(cliente.id);
 
             //Conectar cliente
-            socket.conectarCliente(cliente);
+            socket.conectarCliente(cliente,this.io);
+
+            //Obtener usuarios
+            socket.obtenerUsuarios(cliente,this.io);
 
             //Mensajes
             socket.mensaje(cliente,this.io);
 
             //Desconectar
-            socket.desconectar(cliente);
+            socket.desconectar(cliente,this.io);
 
              //login
-             socket.login(cliente);
+             socket.login(cliente,this.io);
+
+             
+
         });
 
     }
